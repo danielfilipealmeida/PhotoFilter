@@ -16,12 +16,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var imageView: NSImageView!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        
+        // load the image into a CIImage
         let image = NSImage(named: "photo.jpg")
-        
         let ciImage = CIImageFromNSImage(image!)
+    
+        // sets up the filter
+        let filter  = CIFilter(name: "CISepiaTone")
+        filter?.setValue(ciImage, forKey: kCIInputImageKey)
+        filter?.setValue(2, forKey: "inputIntensity")
         
+        // filter the image
+        let result: CIImage = filter?.value(forKey: kCIOutputImageKey) as! CIImage
         
-        self.imageView.image = NSImagefromCIImage(ciImage!)
+        self.imageView.image = NSImagefromCIImage(result)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
