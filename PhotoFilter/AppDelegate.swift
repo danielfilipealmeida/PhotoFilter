@@ -7,15 +7,17 @@
 //
 
 import Cocoa
+import CoreImage
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
-
-
+    @IBOutlet weak var imageView: NSImageView!
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        let image = NSImage(named: "photo.jpg")
+        self.imageView.image = image
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
