@@ -9,27 +9,43 @@
 import Cocoa
 import CoreImage
 
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var imageView: NSImageView!
     
+    var project: Project
+    
+    override init() {
+        self.project = Project()
+        super.init()
+    }
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
-        // load the image into a CIImage
-        let image = NSImage(named: "photo.jpg")
-        let ciImage = CIImageFromNSImage(image!)
-    
+        let path = Bundle.main.path(forResource: "photo", ofType: "jpg")!
+        
+        do {
+            try project.loadImage(path: path)
+        }
+        catch {
+            print ("Error loading Image")
+        }
+        
         // sets up the filter
         let filter  = CIFilter(name: "CISepiaTone")
-        filter?.setValue(ciImage, forKey: kCIInputImageKey)
+        filter?.setValue(project.getImage(), forKey: kCIInputImageKey)
         filter?.setValue(2, forKey: "inputIntensity")
+        let filterAttributes = filter?.attributes
+        print(filterAttributes ?? "")
         
         // filter the image
         let result: CIImage = filter?.value(forKey: kCIOutputImageKey) as! CIImage
         
         self.imageView.image = NSImagefromCIImage(result)
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

@@ -13,6 +13,8 @@
 		654881B4238DAD380064712B /* PhotoFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654881B3238DAD380064712B /* PhotoFilterTests.swift */; };
 		654881BF238DAD380064712B /* PhotoFilterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654881BE238DAD380064712B /* PhotoFilterUITests.swift */; };
 		654881CD238DB3A10064712B /* photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 654881CC238DB3A10064712B /* photo.jpg */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		65572738239080A6004F844F /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65572737239080A6004F844F /* Project.swift */; };
+		65572739239080A6004F844F /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65572737239080A6004F844F /* Project.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,7 @@
 		654881BE238DAD380064712B /* PhotoFilterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFilterUITests.swift; sourceTree = "<group>"; };
 		654881C0238DAD380064712B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		654881CC238DB3A10064712B /* photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo.jpg; sourceTree = "<group>"; };
+		65572737239080A6004F844F /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				654881A2238DAD370064712B /* AppDelegate.swift */,
+				65572737239080A6004F844F /* Project.swift */,
 				654881A4238DAD380064712B /* Assets.xcassets */,
 				654881A6238DAD380064712B /* MainMenu.xib */,
 				654881A9238DAD380064712B /* Info.plist */,
@@ -256,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				654881A3238DAD370064712B /* AppDelegate.swift in Sources */,
+				65572738239080A6004F844F /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				654881B4238DAD380064712B /* PhotoFilterTests.swift in Sources */,
+				65572739239080A6004F844F /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
