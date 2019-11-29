@@ -32,26 +32,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         catch {
             print ("Error loading Image")
+            return
         }
         
-        // sets up the filter
-        let filter  = CIFilter(name: "CISepiaTone")
-        filter?.setValue(project.getImage(), forKey: kCIInputImageKey)
-        filter?.setValue(2, forKey: "inputIntensity")
-        let filterAttributes = filter?.attributes
-        print(filterAttributes ?? "")
+        // filter 1
+        project.addFilter(filterName: "CISepiaTone")
+        project.setFilterValueForKey(index: 0, value: 2, key: "inputIntensity")
         
-        // filter the image
-        let result: CIImage = filter?.value(forKey: kCIOutputImageKey) as! CIImage
+        // filter 2
+        project.addFilter(filterName: "CIGaussianBlur")
+        project.setFilterValueForKey(index: 1, value: 2, key: "inputRadius")
         
-        self.imageView.image = NSImagefromCIImage(result)
+        // filter 3
+        project.addFilter(filterName: "CIColorInvert")
         
+        self.imageView.image =  NSImagefromCIImage(project.getFilteredImage())
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 
+    /**
+     Convert NSImage to CIImage.
+     
+     - parameter nsImage: the input image
+     
+     - returns: an equivalent CIImage
+     
+     - TODO: move to a tools class
+     */
     func CIImageFromNSImage(_ nsImage:NSImage) -> CIImage? {
         guard let tiffData = nsImage.tiffRepresentation else { return nil }
         guard let bitmap = NSBitmapImageRep(data:tiffData) else { return nil }
@@ -62,9 +72,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     /**
      Creates a NSImage from a CIImage
      
-     -Parameter ciImage: the input image in CIImage object
+     - Parameter ciImage: the input image in CIImage object
      
-     -Returns: a equivalent NSImage object
+     - Returns: a equivalent NSImage object
+     
+     - TODO: move to a tools class
      */
     func NSImagefromCIImage(_ ciImage:CIImage) -> NSImage? {
         let rep = NSCIImageRep(ciImage: ciImage)
