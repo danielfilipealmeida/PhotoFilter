@@ -49,6 +49,7 @@
 		654881C0238DAD380064712B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		654881CC238DB3A10064712B /* photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo.jpg; sourceTree = "<group>"; };
 		65572737239080A6004F844F /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		6571237C2391E45E0091E38A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		65488196238DAD370064712B = {
 			isa = PBXGroup;
 			children = (
+				6571237C2391E45E0091E38A /* README.md */,
 				654881A1238DAD370064712B /* PhotoFilter */,
 				654881B2238DAD380064712B /* PhotoFilterTests */,
 				654881BD238DAD380064712B /* PhotoFilterUITests */,
