@@ -14,7 +14,10 @@
 		654881BF238DAD380064712B /* PhotoFilterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654881BE238DAD380064712B /* PhotoFilterUITests.swift */; };
 		654881CD238DB3A10064712B /* photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 654881CC238DB3A10064712B /* photo.jpg */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		65572738239080A6004F844F /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65572737239080A6004F844F /* Project.swift */; };
-		65572739239080A6004F844F /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65572737239080A6004F844F /* Project.swift */; };
+		6571237E23931F170091E38A /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571237D23931F170091E38A /* Filters.swift */; };
+		6571238A239480810091E38A /* FilterWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65712389239480810091E38A /* FilterWindow.swift */; };
+		65E0BCD1239FA57A006A71CB /* FiltersWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65E0BCD0239FA57A006A71CB /* FiltersWindow.xib */; };
+		65E0BCD3239FA5A1006A71CB /* FiltersWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E0BCD2239FA5A1006A71CB /* FiltersWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,10 @@
 		654881CC238DB3A10064712B /* photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo.jpg; sourceTree = "<group>"; };
 		65572737239080A6004F844F /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		6571237C2391E45E0091E38A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		6571237D23931F170091E38A /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		65712389239480810091E38A /* FilterWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterWindow.swift; sourceTree = "<group>"; };
+		65E0BCD0239FA57A006A71CB /* FiltersWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiltersWindow.xib; sourceTree = "<group>"; };
+		65E0BCD2239FA5A1006A71CB /* FiltersWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +110,15 @@
 			isa = PBXGroup;
 			children = (
 				654881A2238DAD370064712B /* AppDelegate.swift */,
+				6571237D23931F170091E38A /* Filters.swift */,
 				65572737239080A6004F844F /* Project.swift */,
+				65712389239480810091E38A /* FilterWindow.swift */,
 				654881A4238DAD380064712B /* Assets.xcassets */,
-				654881A6238DAD380064712B /* MainMenu.xib */,
 				654881A9238DAD380064712B /* Info.plist */,
 				654881AA238DAD380064712B /* PhotoFilter.entitlements */,
+				654881A6238DAD380064712B /* MainMenu.xib */,
+				65E0BCD0239FA57A006A71CB /* FiltersWindow.xib */,
+				65E0BCD2239FA5A1006A71CB /* FiltersWindow.swift */,
 			);
 			path = PhotoFilter;
 			sourceTree = "<group>";
@@ -237,6 +248,7 @@
 				654881A5238DAD380064712B /* Assets.xcassets in Resources */,
 				654881A8238DAD380064712B /* MainMenu.xib in Resources */,
 				654881CD238DB3A10064712B /* photo.jpg in Resources */,
+				65E0BCD1239FA57A006A71CB /* FiltersWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,8 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E0BCD3239FA5A1006A71CB /* FiltersWindow.swift in Sources */,
+				6571238A239480810091E38A /* FilterWindow.swift in Sources */,
 				654881A3238DAD370064712B /* AppDelegate.swift in Sources */,
 				65572738239080A6004F844F /* Project.swift in Sources */,
+				6571237E23931F170091E38A /* Filters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +286,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				654881B4238DAD380064712B /* PhotoFilterTests.swift in Sources */,
-				65572739239080A6004F844F /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

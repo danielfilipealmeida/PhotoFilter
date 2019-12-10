@@ -17,36 +17,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var imageView: NSImageView!
     
     var project: Project
+    var filtersWindow: FiltersWindow
     
     override init() {
         self.project = Project()
+        filtersWindow = FiltersWindow()
         super.init()
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
-        let path = Bundle.main.path(forResource: "photo", ofType: "jpg")!
-        
-        do {
-            try project.loadImage(path: path)
-        }
-        catch {
-            print ("Error loading Image")
-            return
-        }
-        
-        // filter 1
-        project.addFilter(filterName: "CISepiaTone")
-        project.setFilterValueForKey(index: 0, value: 2, key: "inputIntensity")
-        
-        // filter 2
-        project.addFilter(filterName: "CIGaussianBlur")
-        project.setFilterValueForKey(index: 1, value: 2, key: "inputRadius")
-        
-        // filter 3
-        project.addFilter(filterName: "CIColorInvert")
-        
-        self.imageView.image =  NSImagefromCIImage(project.getFilteredImage())
+        demo()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -84,6 +64,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         nsImage.addRepresentation(rep)
         
         return nsImage
+    }
+    
+    /**
+     Starts a demos
+     */
+    func demo() {
+        let path = Bundle.main.path(forResource: "photo", ofType: "jpg")!
+        
+        do {
+            try project.loadImage(path: path)
+        }
+        catch {
+            print ("Error loading Image")
+            return
+        }
+        
+        // filter 1
+        project.addFilter(filterName: "CISepiaTone")
+        project.setFilterValueForKey(index: 0, value: 2, key: "inputIntensity")
+        
+        // filter 2
+        project.addFilter(filterName: "CIGaussianBlur")
+        project.setFilterValueForKey(index: 1, value: 2, key: "inputRadius")
+        
+        // filter 3
+        project.addFilter(filterName: "CIColorInvert")
+        
+        self.imageView.image =  NSImagefromCIImage(project.getFilteredImage())
     }
 
 }
